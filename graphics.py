@@ -7,9 +7,7 @@ class Window():
         self.canvas = Canvas(self.__root, width=width, height=height)
         self.canvas.pack()
         self.running = False
-
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
-
 
     def redraw(self):
         self.__root.update_idletasks()
@@ -19,17 +17,24 @@ class Window():
         self.running = True
         while self.running:
             self.redraw()
-
+        print("Window closed...")
+            
     def close(self):
         self.running = False
 
 
+class Point():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
+class Line():
+    def __init__(self, point1, point2):
+        self.point1 = point1
+        self.point2 = point2
 
-def main():
-    win = Window(800, 600)
-    win.wait_for_close()
+    def draw(self, canvas, fill_color):
+        canvas.create_line(
+            self.point1.x, self.point1.y, self.point2.x, self.point.y, fill=fill_color, width=2
+        )
 
-
-if __name__ == "__main__":
-    main()
