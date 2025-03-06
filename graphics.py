@@ -22,6 +22,8 @@ class Window():
     def close(self):
         self.running = False
 
+    def draw_line(self, line, fill_color):
+        line.draw(self, fill_color)
 
 class Point():
     def __init__(self, x, y):
