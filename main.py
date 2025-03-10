@@ -2,10 +2,13 @@ from graphics import *
 
 def main():
     win = Window(800, 600)
-    p1 = Point(30, 30)
-    p2 = Point(30, 130)
-    line1 = Line(p1, p2)
-    win.draw_line(line1, "red")
+
+    # Cell 1
+    cell1 = Cell(True, True, False, False, 20, 20, 80, 80, win)
+    cell2 = Cell(True, False, False, True, 20, 80, 80, 140, win)
+    cell1.draw()
+    cell2.draw()
+
     
     win.wait_for_close()
 
