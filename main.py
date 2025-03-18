@@ -5,7 +5,15 @@ from maze1 import Maze
 def main():
     win = Window(800, 600)
 
-    maze = Maze(50, 50, 6, 6, 50, 50, win, 10)
+    maze_cols = 10
+    maze_rows = 10
+    
+    cell_size = 40
+    pos_x = (800 / 2) - (maze_cols * cell_size * .5) # centers horizontally
+    pos_y = (600 / 2) - (maze_rows * cell_size * .5) # centers vertically
+    maze = Maze(pos_x, pos_y, maze_cols, maze_rows, cell_size, cell_size, win)
+
+    maze.solve()
     
     win.wait_for_close()
 

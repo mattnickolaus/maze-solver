@@ -64,5 +64,4 @@ class Cell():
             color = "red" 
 
         self._win.draw_line(line_between, color)
-        print("drawn")
 
